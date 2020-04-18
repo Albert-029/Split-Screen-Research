@@ -110,26 +110,10 @@ bool ModulePlayer::Start(int x, int y, int z, float angle, PLAYER p, Color color
 	vehicle->SetVelocityZero();
 	position = vehicle->GetPos();
 
-
-	sphere.radius = 0.15f;
-	ball = App->physics->AddBody(sphere,0.001f);
-	ball->SetSensors();	
-
-	cylinder.radius = 0.05f;
-	cylinder.height = 2.5f;
-	cylinder.SetPos(x, y + 2, z);
-
 	arrow.SetPos(x, y + 3, z);
 
 	timer.Start();
 	timer2.Start();
-
-	cable = App->physics->AddBody(cylinder,0.51f);
-	cylinder.SetRotation(90, vec3({ 0,0,1 }));
-
-	App->physics->AddConstraintHinge(*vehicle, *cable, vec3(0.8, 2.0f, -2.1), vec3(2.5/2, 0, 0), vec3(1, 0, 0), vec3(0, 0, 1));
-	//App->physics->AddConstraintHinge(*vehicle, *cable, vec3(0, 1.5f, -2), vec3(0.9, 0, 0), vec3(1, 0, 0), vec3(0, 0, 1));
-	App->physics->AddConstraintHinge(*cable, *ball, vec3(-1.25, 0, 0), vec3(0, 0, 0), vec3(0, 0, 1), vec3(0, 0, 1), true);
 
 	return true;
 }
@@ -138,8 +122,6 @@ bool ModulePlayer::Start(int x, int y, int z, float angle, PLAYER p, Color color
 bool ModulePlayer::CleanUp()
 {
 	LOG("Unloading player");
-	ball = nullptr;
-	cable = nullptr;
 	vehicle = nullptr;
 
 	return true;
@@ -168,12 +150,8 @@ update_status ModulePlayer::Update(float dt)
 				acceleration = MAX_ACCELERATION * 10; //brake = BRAKE_POWER;
 			else if (km < 120)
 				acceleration = MAX_ACCELERATION * 2;
-
-			if (km > 120 && !boosting) {
-				acceleration = -MAX_ACCELERATION * 2;
-			}
-
 		}
+
 		if ((App->input->GetKey(SDL_SCANCODE_UP) == KEY_UP && player == PLAYER1) ||
 			(App->input->GetKey(SDL_SCANCODE_W) == KEY_UP && player == PLAYER2)) {
 
@@ -244,57 +222,7 @@ update_status ModulePlayer::Update(float dt)
 				vehicle->Push(0, 5000, 0);
 			}
 		}
-
-		if (((App->input->GetKey(SDL_SCANCODE_RSHIFT) == KEY_DOWN && player == PLAYER1) ||
-			(App->input->GetKey(SDL_SCANCODE_LSHIFT) == KEY_DOWN && player == PLAYER2)) && boost)
-		{
-			if (timer.Read() >= 2000)
-				timer.Start();
-			else
-				timer.Resume();
-			
-			if (App->audio->playingFX(3) && player == PLAYER1) {
-				App->audio->PlayFx(BOOST, 0, 3);
-			}
-			if (App->audio->playingFX(4) && player == PLAYER2) {
-				App->audio->PlayFx(BOOST, 0, 4);
-			}
-		}
-
-		if (((App->input->GetKey(SDL_SCANCODE_RSHIFT) == KEY_REPEAT && player == PLAYER1) ||
-			(App->input->GetKey(SDL_SCANCODE_LSHIFT) == KEY_REPEAT && player == PLAYER2)) && boost)
-		{
-			if (timer.Read() < 2000 && timer.Read() != 0) {
-				if (km < 170.0f) {
-					vehicle->Push(0, 0, vehicle->vehicle->getForwardVector().getZ() * 300);
-				}
-				if (!App->audio->playingFX(3) && player == PLAYER1) {
-					App->audio->PlayFx(BOOST, 0, 3);
-				}
-				if (!App->audio->playingFX(4) && player == PLAYER2) {
-					App->audio->PlayFx(BOOST, 0, 4);
-				}
-				boosting = true;
-			}
-			else {
-				boost = false;
-				boosting = false;
-				timer.Stop();
-			}
-		}
-
-		if ((App->input->GetKey(SDL_SCANCODE_RSHIFT) == KEY_UP && player == PLAYER1) ||
-			(App->input->GetKey(SDL_SCANCODE_LSHIFT) == KEY_UP && player == PLAYER2) && boost)
-		{
-			timer.Stop();
-			boosting = false;
-		}
 	}
-
-	if (boost)
-		sphere.color = Red;
-	else
-		sphere.color = White;
 
 	vehicle->ApplyEngineForce(acceleration);
 	vehicle->Turn(turn);
@@ -304,27 +232,6 @@ update_status ModulePlayer::Update(float dt)
 
 	arrow.SetPos(vehicle->GetPos().x, vehicle->GetPos().y + 2.5, vehicle->GetPos().z);
 
-	if (vehicle != nullptr)
-	{
-		/*vec3 c_pos = vehicle->GetPos() + vec3(0, 5, 0);
-
-		float x = abs(App->scene_intro->pb_ball->GetPos().x - c_pos.x);
-		float z = abs(App->scene_intro->pb_ball->GetPos().z - c_pos.z);
-		float h = sqrt(x * x + z * z);
-
-		float b = x / h;
-		float angle = acos(b) / M_PI * 180.0f;
-		LOG("angles: %f", angle);
-
-		cylinder.SetPos(c_pos.x, c_pos.y, c_pos.z);
-		cylinder.SetRotation(angle, { 0,1,0 });
-
-		mat4x4 mat4 = look( vehicle->GetPos(),vec3(0,0,0), vec3(0,1,0));
-		LOG(" %f %f %f\n%f %f %f\n%f %f %f\n%f %f %f\n%f %f %f\n",mat4[0],mat4[1],mat4[2], mat4[3], mat4[4], mat4[5], mat4[6], mat4[7], mat4[8], mat4[9], mat4[10], mat4[11], mat4[12], mat4[13], mat4[14], mat4[15])
-		arrow.transform = mat4;*/
-	}
-
-
 	Draw();
 
 	return UPDATE_CONTINUE;
@@ -332,14 +239,6 @@ update_status ModulePlayer::Update(float dt)
 
 bool ModulePlayer::Draw() {
 	vehicle->Render();
-	//arrow.Render();
-
-	ball->GetTransform(&sphere.transform);
-
-	cable->GetTransform(&cylinder.transform);
-
-	sphere.Render();
-	cylinder.Render();
 
 	return true;
 }

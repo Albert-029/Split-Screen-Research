@@ -49,7 +49,7 @@ bool ModuleSceneIntro::Start()
 
 	player1->Start(0, 0, 95, 0, PLAYER1, Red);
 
-	player2->Start(20, 0, 95, 0, PLAYER2, Blue);
+	player2->Start(10, 0, 95, 0, PLAYER2, Blue);
 
 	player1->vehicle->SetVelocityZero();
 	player2->vehicle->SetVelocityZero();

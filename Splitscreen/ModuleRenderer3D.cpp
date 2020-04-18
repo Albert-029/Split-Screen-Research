@@ -107,10 +107,10 @@ bool ModuleRenderer3D::Init()
 update_status ModuleRenderer3D::PreUpdate(float dt)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	
+
 	for (int loop = 0; loop < 2; loop++)
 	{
-		if (loop == 0)												
+		if (loop == 0)
 		{
 			// Set The Viewport To The Left.
 			glViewport(0, 0, SCREEN_WIDTH / 2, SCREEN_HEIGHT);
@@ -121,9 +121,10 @@ update_status ModuleRenderer3D::PreUpdate(float dt)
 			// Set The Viewport To The Right.
 			glViewport(SCREEN_WIDTH / 2, 0, SCREEN_WIDTH / 2, SCREEN_HEIGHT);
 		}
+
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
-		gluPerspective(45.0, (GLfloat)(SCREEN_WIDTH) / (GLfloat)(SCREEN_HEIGHT)/2, 0.1f, 500.0);
+		gluPerspective(45.0, (GLfloat)(SCREEN_WIDTH) / (GLfloat)(SCREEN_HEIGHT) / 2, 0.1f, 500.0);
 		glMatrixMode(GL_MODELVIEW);
 		glLoadIdentity();
 		glClear(GL_DEPTH_BUFFER_BIT);
@@ -131,21 +132,13 @@ update_status ModuleRenderer3D::PreUpdate(float dt)
 		if (loop == 0)
 		{
 			glLoadMatrixf(App->camera2->GetViewMatrix());
-			// light 0 on cam pos
-			lights[0].SetPos(App->camera2->Position.x, App->camera2->Position.y, App->camera2->Position.z);
-
 		}
 
-		if (loop == 1)							
+		if (loop == 1)
 		{
 			glLoadMatrixf(App->camera->GetViewMatrix());
-			// light 0 on cam pos
-			lights[0].SetPos(App->camera->Position.x, App->camera->Position.y, App->camera->Position.z);
 		}
 
-
-		for (uint i = 0; i < MAX_LIGHTS; ++i)
-			lights[i].Render();
 		App->Draw();
 	}
 
