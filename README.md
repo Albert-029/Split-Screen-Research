@@ -1,6 +1,6 @@
 # Split Screen
 
-I am [Albert Robles Muñoz], student of the [Bachelor’s Degree in Video Games by UPC at CITM](https://www.citm.upc.edu/ing/estudis/graus-videojocs/). 
+I am Albert Robles Muñoz, student of the [Bachelor’s Degree in Video Games by UPC at CITM](https://www.citm.upc.edu/ing/estudis/graus-videojocs/). 
 This content is generated for the second year’s subject Project 2.
 
 This C++ project has been programmed using [Visual Studio](https://visualstudio.microsoft.com/es/vs/)
