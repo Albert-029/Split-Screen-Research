@@ -143,7 +143,7 @@ update_status ModuleSceneIntro::Update(float dt)
 		startRound();
 	
 	char title[80];
-	sprintf_s(title, "Radio Control League");
+	sprintf_s(title, "Split Screen");
 	App->window->SetTitle(title);
 
 	return UPDATE_CONTINUE;
