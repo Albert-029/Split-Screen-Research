@@ -11,6 +11,7 @@ Feel free to visit:
 ## General Controls
 
 - Player 1:
+
 	Up Arrow: Throttle / Accelerate
 	
 	Down Arrow: Brake
@@ -21,6 +22,7 @@ Feel free to visit:
 	
 	
 - Player 2:
+
 	W Key: Throttle / Accelerate
 	
 	S Key: Brake
