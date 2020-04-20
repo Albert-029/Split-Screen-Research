@@ -16,6 +16,9 @@
 class Application
 {
 public:
+
+	//TODO 1
+
 	ModuleWindow* window;
 	ModuleInput* input;
 	ModuleAudio* audio;

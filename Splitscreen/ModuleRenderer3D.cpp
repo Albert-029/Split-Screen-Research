@@ -106,37 +106,34 @@ bool ModuleRenderer3D::Init()
 // PreUpdate: clear buffer
 update_status ModuleRenderer3D::PreUpdate(float dt)
 {
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT);		//Clear Buffers
 
-	for (int loop = 0; loop < 2; loop++)
+	for (int cameras = 0; cameras < 2; cameras++)
 	{
-		if (loop == 0)
+		//TODO 2
+
+		glViewport(0, 0, SCREEN_WIDTH / 2, SCREEN_HEIGHT);		//Set Viewport
+
+		//TODO 3
+
+		if (cameras == 1)
 		{
-			// Set The Viewport To The Left.
-			glViewport(0, 0, SCREEN_WIDTH / 2, SCREEN_HEIGHT);
+			glViewport(SCREEN_WIDTH / 2, 0, SCREEN_WIDTH / 2, SCREEN_HEIGHT);		//Set Viewport
 		}
 
-		if (loop == 1)
-		{
-			// Set The Viewport To The Right.
-			glViewport(SCREEN_WIDTH / 2, 0, SCREEN_WIDTH / 2, SCREEN_HEIGHT);
-		}
+		glMatrixMode(GL_PROJECTION);	//Specify Current Matrix
+		glLoadIdentity();				//Replaces Matrix
+		gluPerspective(45.0, (GLfloat)(SCREEN_WIDTH) / (GLfloat)(SCREEN_HEIGHT) / 2, 0.1f, 500.0);		//Set Prespective
+		glMatrixMode(GL_MODELVIEW);		//Specify Current Matrix
+		glClear(GL_DEPTH_BUFFER_BIT);	//Clear Buffers
 
-		glMatrixMode(GL_PROJECTION);
-		glLoadIdentity();
-		gluPerspective(45.0, (GLfloat)(SCREEN_WIDTH) / (GLfloat)(SCREEN_HEIGHT) / 2, 0.1f, 500.0);
-		glMatrixMode(GL_MODELVIEW);
-		glLoadIdentity();
-		glClear(GL_DEPTH_BUFFER_BIT);
+		glLoadMatrixf(App->camera->GetViewMatrix());		//Assign Camera
 
-		if (loop == 0)
-		{
-			glLoadMatrixf(App->camera2->GetViewMatrix());
-		}
+		//TODO 3
 
-		if (loop == 1)
+		if (cameras == 1)
 		{
-			glLoadMatrixf(App->camera->GetViewMatrix());
+			glLoadMatrixf(App->camera2->GetViewMatrix());	//Assign Camera
 		}
 
 		App->Draw();
