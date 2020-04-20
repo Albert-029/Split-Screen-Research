@@ -2,6 +2,8 @@
 
 Application::Application()
 {
+	//TODO 1 (Create Modules)
+
 	window = new ModuleWindow(this);
 	input = new ModuleInput(this);
 	audio = new ModuleAudio(this, true);
@@ -25,7 +27,6 @@ Application::Application()
 	
 	// Scenes
 	AddModule(scene_intro);
-	//AddModule(player);
 
 	// Renderer last!
 	AddModule(renderer3D);

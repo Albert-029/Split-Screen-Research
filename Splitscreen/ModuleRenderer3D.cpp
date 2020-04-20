@@ -108,13 +108,11 @@ update_status ModuleRenderer3D::PreUpdate(float dt)
 {
 	glClear(GL_COLOR_BUFFER_BIT);		//Clear Buffers
 
+	//TODO 2 & 3 (Viewports)
+
 	for (int cameras = 0; cameras < 2; cameras++)
 	{
-		//TODO 2
-
 		glViewport(0, 0, SCREEN_WIDTH / 2, SCREEN_HEIGHT);		//Set Viewport
-
-		//TODO 3
 
 		if (cameras == 1)
 		{
@@ -128,8 +126,6 @@ update_status ModuleRenderer3D::PreUpdate(float dt)
 		glClear(GL_DEPTH_BUFFER_BIT);	//Clear Buffers
 
 		glLoadMatrixf(App->camera->GetViewMatrix());		//Assign Camera
-
-		//TODO 3
 
 		if (cameras == 1)
 		{

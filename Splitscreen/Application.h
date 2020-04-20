@@ -17,7 +17,7 @@ class Application
 {
 public:
 
-	//TODO 1
+	//TODO 1 (Create Modules)
 
 	ModuleWindow* window;
 	ModuleInput* input;

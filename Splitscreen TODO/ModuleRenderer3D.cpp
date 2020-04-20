@@ -108,6 +108,8 @@ update_status ModuleRenderer3D::PreUpdate(float dt)
 {
 	glClear(GL_COLOR_BUFFER_BIT);		//Clear Buffers
 
+	//TODO 2 & 3 (Viewports)
+
 	glMatrixMode(GL_PROJECTION);	//Specify Current Matrix
 	glLoadIdentity();				//Replaces Matrix
 	gluPerspective(45.0, (GLfloat)(SCREEN_WIDTH) / (GLfloat)(SCREEN_HEIGHT) / 2, 0.1f, 500.0);		//Set Prespective
