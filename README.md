@@ -44,11 +44,11 @@ Licensed under the [MIT License](LICENSE)
 
 This handout has a basic program that lets you move two cars in the space with the Arrows and WASD.
 
-TODO 1: Creating a new camera
+# TODO 1: Creating a new camera
 
 <img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%201.PNG" alt="" class="inline"/>
 
-TODO 2: Setting up first viewport
+### TODO 2: Setting up first viewport
 
 <img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%202.PNG" alt="" class="inline"/>
 
@@ -63,3 +63,6 @@ TODO 4: Assign the new camera to the player
 ## References
 
 <a href="https://en.wikipedia.org/wiki/Split_screen_(video_games)">Split screen in video games</a>
+
+<a href="https://docs.microsoft.com/en-us/windows/win32/opengl/opengl">OpenGL libraries</a>
+
