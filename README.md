@@ -10,6 +10,13 @@ Feel free to visit:
 
 ## General Controls
 
+- Player 1:
+	Up Arrow: Throttle / Accelerate
+	Down Arrow: Brake
+	Left Arrow: Turn Left
+	Right Arrow: Turn Right
+	
+- Player 2:
 	W Key: Throttle / Accelerate
 	S Key: Brake
 	A Key: Turn Left
