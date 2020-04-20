@@ -37,28 +37,48 @@ Licensed under the [MIT License](LICENSE)
 
 ## Description
 
-
-
+This project is meant to be a guide to teach how to implement a "Split-Screen" in a videogame. We're using a little sample of a project built with Bullet Physics SDK where we have two cars in a plane. The goal is to create two separate viewports with a camera attatched to them that follow each car.
 
 ## Code implementation
 
 This handout has a basic program that lets you move two cars in the space with the Arrows and WASD.
 
-# TODO 1: Creating a new camera
+### TODO 1: Creating a new camera
+
+First we have to create a new module for the second camera.
 
 <img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%201.PNG" alt="" class="inline"/>
+<img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%201%20(2).PNG" alt="" class="inline"/>
+
+### Solution:
+
+<img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%201%20Solution.PNG" alt="" class="inline"/>
+<img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%201%20Solution%20(2).PNG" alt="" class="inline"/>
 
 ### TODO 2: Setting up first viewport
 
 <img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%202.PNG" alt="" class="inline"/>
 
-TODO 3: Setting up more than one viewport
+### Solution:
+
+<img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%202%20Solution.PNG" alt="" class="inline"/>
+
+### TODO 3: Setting up more than one viewport
 
 <img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%203.PNG" alt="" class="inline"/>
 
-TODO 4: Assign the new camera to the player
+### Solution:
+
+<img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%203%20Solution.PNG" alt="" class="inline"/>
+
+### TODO 4: Assign the new camera to the player
 
 <img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%204.PNG" alt="" class="inline"/>
+
+### Solution:
+
+<img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%204%20Solution.PNG" alt="" class="inline"/>
+
 
 ## References
 
