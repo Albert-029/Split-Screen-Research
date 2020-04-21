@@ -6,7 +6,7 @@ This content is generated for the second year’s subject Project 2, under super
 This C++ project has been programmed using [Visual Studio](https://visualstudio.microsoft.com/es/vs/)
 
 Feel free to visit:
-- [Split Screen Repository](https://github.com/Albertito029/Split-Screen-Research)
+- [Split Screen Website](https://albertito029.github.io/Split-Screen-Research/)
 
 ## General Controls
 
