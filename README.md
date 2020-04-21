@@ -47,7 +47,7 @@ This handout has a basic program that lets you move two cars in the space with t
 
 First we have to create a new module for the second camera.
 
-<img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%201.PNG" alt="" class="inline"/>
+<img src="Docs/Images/Todo%201%20(2).PNG" alt="" class="inline"/>
 <img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%201%20(2).PNG" alt="" class="inline"/>
 
 ### Solution:
