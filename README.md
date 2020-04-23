@@ -48,42 +48,42 @@ This handout has a basic program that lets you move two cars in the space with t
 First we have to create a new module for the second camera.
 
 <img src="Docs/Images/Todo%201.PNG" alt="" class="inline"/>
-<img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%201%20(2).PNG" alt="" class="inline"/>
+<img src="Docs/Images/Todo%201%20(2).PNG" alt="" class="inline"/>
 
 ### Solution:
 
-<img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%201%20Solution.PNG" alt="" class="inline"/>
-<img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%201%20Solution%20(2).PNG" alt="" class="inline"/>
+<img src="Docs/Images/Todo%201%20Solution.PNG" alt="" class="inline"/>
+<img src="Docs/Images/Todo%201%20Solution%20(2).PNG" alt="" class="inline"/>
 
 ### TODO 2: Setting up first viewport
 
 Following up we have to use the "glViewport()" function to create our first viewport that we will put on the left of the screen.
 
-<img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%202.PNG" alt="" class="inline"/>
+<img src="Docs/Images/Todo%202.PNG" alt="" class="inline"/>
 
 ### Solution:
 
-<img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%202%20Solution.PNG" alt="" class="inline"/>
+<img src="Docs/Images/Todo%202%20Solution.PNG" alt="" class="inline"/>
 
 ### TODO 3: Setting up more than one viewport
 
 Then we have to create the second viewport. We will do just like before but now it gets a little trickier, we have to create a for that goes from "0" to the number of viewports that we want to have, and put our new "glViewport()" functions inside of "ifs".
 
-<img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%203.PNG" alt="" class="inline"/>
+<img src="Docs/Images/Todo%203.PNG" alt="" class="inline"/>
 
 ### Solution:
 
-<img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%203%20Solution.PNG" alt="" class="inline"/>
+<img src="Docs/Images/Todo%203%20Solution.PNG" alt="" class="inline"/>
 
 ### TODO 4: Assign the new camera to the player
 
 This is very simple, we just have to attatch the camera to the player coordinates.
 
-<img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%204.PNG" alt="" class="inline"/>
+<img src="Docs/Images/Todo%204.PNG" alt="" class="inline"/>
 
 ### Solution:
 
-<img src="https://github.com/Albertito029/Split-Screen-Research/blob/master/Docs/Images/Todo%204%20Solution.PNG" alt="" class="inline"/>
+<img src="Docs/Images/Todo%204%20Solution.PNG" alt="" class="inline"/>
 
 
 ## References
